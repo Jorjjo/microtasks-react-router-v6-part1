@@ -3,7 +3,7 @@ import { PageOne } from './components/pages/PageOne';
 import { PageThree } from './components/pages/PageThree';
 import { PageTwo } from './components/pages/PageTwo';
 import styles from './components/Site.module.css';
-import { Navigate, Route, Routes } from 'react-router';
+import { Navigate, NavLink, Route, Routes } from 'react-router';
 
 export const App = () => {
     return (
@@ -12,7 +12,44 @@ export const App = () => {
                 <h1>HEADER</h1>
             </div>
             <div className={styles.body}>
-                <div className={styles.nav}>Здесь будет навигация</div>
+                <div className={styles.nav}>
+                    <div>
+                        <NavLink
+                            to={'/page1'}
+                            className={({ isActive }) =>
+                                isActive
+                                    ? `${styles.activeNavLink}`
+                                    : `${styles.navLink}`
+                            }
+                        >
+                            Page 1
+                        </NavLink>
+                    </div>
+                    <div>
+                        <NavLink
+                            to={'/page2'}
+                            className={({ isActive }) =>
+                                isActive
+                                    ? `${styles.activeNavLink}`
+                                    : `${styles.navLink}`
+                            }
+                        >
+                            Page 2
+                        </NavLink>
+                    </div>
+                    <div>
+                        <NavLink
+                            to={'/page3'}
+                            className={({ isActive }) =>
+                                isActive
+                                    ? `${styles.activeNavLink}`
+                                    : `${styles.navLink}`
+                            }
+                        >
+                            Page 3
+                        </NavLink>
+                    </div>
+                </div>
                 <div className={styles.content}>
                     <Routes>
                         <Route path='/' element={<Navigate to={'/page1'} />} />
