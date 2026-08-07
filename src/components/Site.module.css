@@ -43,3 +43,16 @@
     color: #7fb8f1;
     text-decoration: underline;
 }
+
+.imagesWrapper {
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    width: fit-content;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+}

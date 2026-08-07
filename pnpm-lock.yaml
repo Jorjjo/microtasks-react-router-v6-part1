@@ -20,6 +20,9 @@ importers:
       react-router-dom:
         specifier: 6.20.0
         version: 6.20.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      uuid:
+        specifier: ^14.0.1
+        version: 14.0.1
     devDependencies:
       '@types/react':
         specifier: 19.0.10
@@ -630,6 +633,10 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
+  uuid@14.0.1:
+    resolution: {integrity: sha512-6ZxzVpzDXDa3bJWaHilVayA+BH/1zmxCJoVgvmqJnid/gPoKHxUrS/aC/T6LGQtNHT+XHG9fXPJB4d+IrU30Ew==}
+    hasBin: true
+
   vite@6.3.1:
     resolution: {integrity: sha512-kkzzkqtMESYklo96HKKPE5KKLkC1amlsqt+RjFMlX2AvbRB/0wghap19NdBxxwGZ+h/C6DLCrcEphPIItlGrRQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -1175,6 +1182,8 @@ snapshots:
       browserslist: 4.28.2
       escalade: 3.2.0
       picocolors: 1.1.1
+
+  uuid@14.0.1: {}
 
   vite@6.3.1:
     dependencies:
