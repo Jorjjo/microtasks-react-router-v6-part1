@@ -2,37 +2,6 @@ import { Link } from 'react-router';
 import styles from '../Site.module.css';
 import { allModels } from './SneakerModel';
 
-// export type PumaItem = {
-//     id: string;
-//     model: string;
-//     collection: string;
-//     price: string;
-//     picture: string;
-// };
-// export const pumaArr: PumaItem[] = [
-//     {
-//         id: v1(),
-//         model: 'PUMA PALERMO',
-//         collection: 'new collection1',
-//         price: '100200$',
-//         picture: pumaPalermo,
-//     },
-//     {
-//         id: v1(),
-//         model: 'PUMA SPEEDYCAT',
-//         collection: 'new collection22',
-//         price: '200300$',
-//         picture: pumaSpeed,
-//     },
-//     {
-//         id: v1(),
-//         model: 'PUMA SUSU',
-//         collection: 'new collection333',
-//         price: '300400$',
-//         picture: pumaSued,
-//     },
-// ];
-
 export const PageTwo = () => {
     return (
         <div>

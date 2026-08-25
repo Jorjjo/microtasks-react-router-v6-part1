@@ -2,45 +2,14 @@ import { Link } from 'react-router';
 import styles from '../Site.module.css';
 import { allModels } from './SneakerModel';
 
-// export type AdidasItem = {
-//     id: string;
-//     model: string;
-//     collection: string;
-//     price: string;
-//     picture: string;
-// };
-// export const adidasArr: AdidasItem[] = [
-//     {
-//         id: v1(),
-//         model: 'ADIDAS ADIFOM TRXN',
-//         collection: 'new collection1',
-//         price: '100200$',
-//         picture: adidasModel1,
-//     },
-//     {
-//         id: v1(),
-//         model: 'ADIDAS ADIFOM SUPER',
-//         collection: 'new collection22',
-//         price: '200300$',
-//         picture: adidasModel2,
-//     },
-//     {
-//         id: v1(),
-//         model: 'ADIDAS SUPER SUPERSKI',
-//         collection: 'new collection333',
-//         price: '300400$',
-//         picture: adidasModel3,
-//     },
-// ];
-
 export const PageOne = () => {
     return (
         <div>
             <h2> ADIDAS</h2>
             <div className={styles.imagesWrapper}>
-                {allModels.adidas.map((item, index) => {
+                {allModels.adidas.map((item) => {
                     return (
-                        <Link key={index} to={`/adidas/${item.id}`}>
+                        <Link key={item.id} to={`/adidas/${item.id}`}>
                             <img
                                 className={styles.image}
                                 src={item.picture}

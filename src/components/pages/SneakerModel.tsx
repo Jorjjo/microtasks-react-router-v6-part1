@@ -66,7 +66,7 @@ export const allModels: ModelState = {
 
 export function SneakerModel() {
     const params = useParams();
-    console.log(params.model);
+    console.log(params.model, params.id);
 
     if (!params.model) {
         return;
@@ -89,6 +89,7 @@ export function SneakerModel() {
                         />
                     </div>
                     <span>{currentItem?.price}</span>
+                    <p>Add description</p>
                 </>
             ) : (
                 'Not available'

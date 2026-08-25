@@ -5,11 +5,13 @@ import { PageTwo } from './components/pages/Puma';
 import styles from './components/Site.module.css';
 import { Navigate, NavLink, Route, Routes } from 'react-router';
 import { SneakerModel } from './components/pages/SneakerModel';
+import { Prices } from './components/pages/Prices';
 
 const PATH = {
     PAGE1: '/adidas',
     PAGE2: '/puma',
     PAGE3: '/abibas',
+    PRICES: '/prices',
     ERROR: '/error404',
 } as const;
 
@@ -55,6 +57,16 @@ export const App = () => {
                             Abibas
                         </NavLink>
                     </div>
+                    <div>
+                        <NavLink
+                            to={PATH.PRICES}
+                            className={({ isActive }) =>
+                                getLinkClassName(isActive)
+                            }
+                        >
+                            Цены для оптовиков
+                        </NavLink>
+                    </div>
                 </div>
                 <div className={styles.content}>
                     <Routes>
@@ -69,10 +81,7 @@ export const App = () => {
                             path={'/:model/:id'}
                             element={<SneakerModel />}
                         />
-                        <Route
-                            path={'/:model/:id'}
-                            element={<SneakerModel />}
-                        />
+                        <Route path={PATH.PRICES} element={<Prices />} />
                         <Route path='/*' element={<Error404 />} />
                     </Routes>
                 </div>
