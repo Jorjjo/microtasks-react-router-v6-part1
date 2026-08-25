@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import styles from '../Site.module.css';
+import styles from '../app/Site.module.css';
 import { allModels } from './SneakerModel';
 
 export const PageTwo = () => {

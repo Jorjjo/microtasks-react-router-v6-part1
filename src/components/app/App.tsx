@@ -1,19 +1,8 @@
-import { Error404 } from './components/pages/Error404';
-import { PageOne } from './components/pages/Adidas';
-import { PageThree } from './components/pages/Abibas';
-import { PageTwo } from './components/pages/Puma';
-import styles from './components/Site.module.css';
-import { Navigate, NavLink, Route, Routes } from 'react-router';
-import { SneakerModel } from './components/pages/SneakerModel';
-import { Prices } from './components/pages/Prices';
+import { NavLink, Outlet } from 'react-router';
+import styles from './Site.module.css';
+import { PATH } from './routes/paths';
 
-const PATH = {
-    PAGE1: '/adidas',
-    PAGE2: '/puma',
-    PAGE3: '/abibas',
-    PRICES: '/prices',
-    ERROR: '/error404',
-} as const;
+
 
 function getLinkClassName(isActive: boolean) {
     return isActive ? styles.activeNavLink : styles.navLink;
@@ -29,7 +18,7 @@ export const App = () => {
                 <div className={styles.nav}>
                     <div>
                         <NavLink
-                            to={PATH.PAGE1}
+                            to={PATH.ADIDAS}
                             className={({ isActive }) =>
                                 getLinkClassName(isActive)
                             }
@@ -39,7 +28,7 @@ export const App = () => {
                     </div>
                     <div>
                         <NavLink
-                            to={PATH.PAGE2}
+                            to={PATH.PUMA}
                             className={({ isActive }) =>
                                 getLinkClassName(isActive)
                             }
@@ -49,7 +38,7 @@ export const App = () => {
                     </div>
                     <div>
                         <NavLink
-                            to={PATH.PAGE3}
+                            to={PATH.ABIBAS}
                             className={({ isActive }) =>
                                 getLinkClassName(isActive)
                             }
@@ -69,21 +58,7 @@ export const App = () => {
                     </div>
                 </div>
                 <div className={styles.content}>
-                    <Routes>
-                        <Route
-                            path='/'
-                            element={<Navigate to={PATH.PAGE1} />}
-                        />
-                        <Route path={PATH.PAGE1} element={<PageOne />} />
-                        <Route path={PATH.PAGE2} element={<PageTwo />} />
-                        <Route path={PATH.PAGE3} element={<PageThree />} />
-                        <Route
-                            path={'/:model/:id'}
-                            element={<SneakerModel />}
-                        />
-                        <Route path={PATH.PRICES} element={<Prices />} />
-                        <Route path='/*' element={<Error404 />} />
-                    </Routes>
+                    <Outlet />
                 </div>
             </div>
             <div className={styles.footer}>abibas 2023</div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
-import styles from './Prices.module.css';
+import styles from '../app/Site.module.css';
 const sneakers = [
     {
         manufacturer: 'Adidas',
@@ -41,9 +41,6 @@ export const Prices = (props: Props) => {
         searchParams.get('onSale')
             ? setFilteredSneakers(sneakers.filter((item) => item.onSale))
             : setFilteredSneakers(sneakers);
-        searchParams.get('topPrice')
-            ? setFilteredSneakers(sneakers.filter((item) => item.price >= 100))
-            : setFilteredSneakers(sneakers);
     }, [searchParams]);
 
     const [filteredSneakers, setFilteredSneakers] = useState(sneakers);
@@ -56,9 +53,6 @@ export const Prices = (props: Props) => {
         setSearchParams({});
     }
 
-    function handleTopPrice() {
-        setSearchParams({ topPrice: 'true' });
-    }
 
     return (
         <div>
@@ -67,9 +61,6 @@ export const Prices = (props: Props) => {
             </button>
             <button onClick={handleReset} className={styles.buttonStyle}>
                 Reset filter
-            </button>
-            <button onClick={handleTopPrice} className={styles.buttonStyle}>
-                Top Price
             </button>
 
             <table className={styles.tableStyle}>

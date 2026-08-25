@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import styles from '../Site.module.css';
+import styles from '../app/Site.module.css';
 import { v1 } from 'uuid';
 import pumaPalermo from '../../assets/puma_1.webp';
 import pumaSpeed from '../../assets/puma_speed.webp';
