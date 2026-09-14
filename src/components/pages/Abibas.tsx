@@ -1,4 +1,4 @@
-export const PageThree = () => {
+export const PageAbibas = () => {
     return (
         <div>
             <h2> ABIBAS</h2>

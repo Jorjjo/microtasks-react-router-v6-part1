@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import styles from '../app/Site.module.css';
 import { allModels } from './SneakerModel';
 
-export const PageOne = () => {
+export const PageAdidas = () => {
     return (
         <div>
             <h2> ADIDAS</h2>

@@ -2,8 +2,6 @@ import { NavLink, Outlet } from 'react-router';
 import styles from './Site.module.css';
 import { PATH } from './routes/paths';
 
-
-
 function getLinkClassName(isActive: boolean) {
     return isActive ? styles.activeNavLink : styles.navLink;
 }
@@ -54,6 +52,16 @@ export const App = () => {
                             }
                         >
                             Цены для оптовиков
+                        </NavLink>
+                    </div>
+                    <div>
+                        <NavLink
+                            to={PATH.PROTECTED}
+                            className={({ isActive }) =>
+                                getLinkClassName(isActive)
+                            }
+                        >
+                            Protected Page
                         </NavLink>
                     </div>
                 </div>
