@@ -1,13 +1,16 @@
 .header {
     background-color: #000000;
     width: 100%;
-    height: 100px;
     text-align: center;
     color: white;
+    padding: 20px 0;
 }
 
 .body {
+    box-sizing: border-box;
+    margin: 0;
     display: flex;
+    min-height: 100vh;
 }
 
 .nav {
@@ -15,21 +18,21 @@
     min-height: 400px;
     width: 30%;
     color: #282c34;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .content {
     background-color: #282c34;
     min-height: 400px;
-    width: 70%;
+    width: 80%;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .footer {
+    padding: 10px 0;
     background-color: #000000;
     width: 100%;
-    height: 120px;
     text-align: center;
     color: white;
 }
@@ -45,7 +48,7 @@
 }
 
 .imagesWrapper {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     gap: 50px;
     justify-content: center;
@@ -53,6 +56,40 @@
 }
 
 .image {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+}
+
+h1 {
+    margin: 0 auto;
+    line-height: 1.1;
+}
+
+.LinkLikeButton {
+    padding:2px 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.LinkLikeButton:hover {
+    background-color: #0056b3;
+}
+.ButtonLikeLink {
+    border: 0;
+    background-color: #ff00b7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.ButtonLikeLink:hover {
+    background-color: #980569;
+}
+.HorizontalNavigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }

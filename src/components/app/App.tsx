@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router';
+import { NavLink, Outlet, useNavigate } from 'react-router';
 import styles from './Site.module.css';
 import { PATH } from './routes/paths';
 
@@ -7,6 +7,10 @@ function getLinkClassName(isActive: boolean) {
 }
 
 export const App = () => {
+    const navigate = useNavigate();
+    const handleNavigate = (step: number) => {
+        navigate(step);
+    };
     return (
         <div>
             <div className={styles.header}>
@@ -65,7 +69,28 @@ export const App = () => {
                         </NavLink>
                     </div>
                 </div>
+
                 <div className={styles.content}>
+                    <div className={styles.HorizontalNavigation}>
+                        <button
+                            onClick={() => handleNavigate(-1)}
+                            className={styles.ButtonLikeLink}
+                        >
+                            Назад
+                        </button>
+                        <NavLink
+                            to={PATH.ADIDAS}
+                            className={styles.LinkLikeButton}
+                        >
+                            На главную
+                        </NavLink>
+                        <button
+                            onClick={() => handleNavigate(+1)}
+                            className={styles.ButtonLikeLink}
+                        >
+                            Вперед
+                        </button>
+                    </div>
                     <Outlet />
                 </div>
             </div>
